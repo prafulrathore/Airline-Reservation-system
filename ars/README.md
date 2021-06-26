@@ -52,17 +52,9 @@ pip install -r requirements.txt
 Base URL for all API endpoints : `http://127.0.0.1:8000/` <br />
 
 ENDPOINT     METHOD     QUERY_PARAMS     DATA
-ENDPOINT | METHOD | QUERY_PARAS | DATA
--------- | ------ | ----------- | ----
-Content  | Content Cell
-Content  | Content Cell
-
-```
-url : fleet/api/aircraft/list/create/
-Method : GET
-Query : 
-Data :
-[
+ |ENDPOINT | METHOD | QUERY_PARAS | DATA |
+ | -------- | ------ | ----------- | ----|
+ | fleet/api/aircraft/list/create/  | GET | jgh| [
     {
         "serial_no": "B71699",
         "manufacturer": "Indigo",
@@ -79,3 +71,10 @@ Data :
         "total_seats": 100
     }
 ]
+Content  | Content Cell
+
+```
+url : 
+Method : 
+Query : 
+Data :
