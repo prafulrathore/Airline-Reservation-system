@@ -47,9 +47,7 @@ Project_apps = [
 ]
 
 # Third-party Packages/ module
-Package_apps = [
-    "rest_framework",
-]
+Package_apps = ["rest_framework", "django_filters"]
 
 # Application definition
 INSTALLED_APPS = Django_apps + Project_apps + Package_apps

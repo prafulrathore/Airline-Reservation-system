@@ -1,4 +1,3 @@
-from tabnanny import verbose
 import uuid
 
 from django.db import models
@@ -8,9 +7,7 @@ from user.models import Passenger
 
 
 class Aircraft(models.Model):
-    serial_no = models.CharField(
-        max_length=6, primary_key=True, editable=False, default=135452
-    )
+    serial_no = models.CharField(max_length=6, editable=False, default=135452)
     manufacturer = models.CharField(max_length=100)
     total_seats = models.IntegerField()
 
@@ -56,17 +53,15 @@ class Schedule(models.Model):
         verbose_name_plural = "Flight Schedules"
 
     def __str__(self):
-        return f"{self.departure_date}-{self.arrival_date}"
+        return f"{self.departure_date} - {self.arrival_date}"
 
 
 class Booking(models.Model):
-    passenger_info = models.ForeignKey(
-        Passenger, on_delete=models.CASCADE, verbose_name="passenger"
-    )
+    passenger_info = models.ForeignKey(Passenger, on_delete=models.CASCADE, default=1)
     flight_schedule = models.ForeignKey(
-        Flight, on_delete=models.CASCADE, verbose_name="schedule"
+        Schedule, on_delete=models.CASCADE, verbose_name="Schedule"
     )
     seat = models.IntegerField()
 
     def __str__(self):
-        return f"Booking details of {self.passenger}"
+        return f"Booking details of {self.passenger_info}"

@@ -3,20 +3,22 @@ from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.views import APIView
 
 from user.models import Passenger
 from user.api.serializer import PassengerSerializer
 from django.contrib.auth.models import User
 
 
-class PassengerCreateView(generics.CreateAPIView):
+class PassengerCreateView(APIView):
     """
-    POST : create a passenger
+    POST : Create a passenger
     """
+
     queryset = Passenger.objects.all()
     serializer_class = PassengerSerializer
 
-    def create(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         serializer = PassengerSerializer(data=request.data)
 
         if serializer.is_valid():
@@ -29,6 +31,7 @@ class PassengerListView(generics.ListAPIView):
     """
     Get : Get a list of all the passengers
     """
+
     queryset = Passenger.objects.all()
     serializer_class = PassengerSerializer
 

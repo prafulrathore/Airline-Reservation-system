@@ -4,37 +4,40 @@ from fleet import views
 
 urlpatterns = [
     path(
-        "aircraft/list/create/",
+        "aircraft/",
         views.AircraftView.as_view(),
         name="aircraft-create-list",
     ),
     path(
-        "aircraft/detail-update-delete/<int:pk>/",
+        "aircraft/<int:pk>/",
         views.AircraftDetailView.as_view(),
-        name="aircraft-detail-update-delete",
+        name="aircraft-rud",
     ),
-    path("flight/list/create/", views.FlightView.as_view(), name="flight-create"),
+    path("flight/", views.FlightView.as_view(), name="flight-list-create"),
     path(
-        "flight/detail-update-delete/<int:pk>/",
+        "flight/<int:pk>/",
         views.FlightDetailView.as_view(),
-        name="flight-detail",
+        name="flight-rud",
     ),
     path(
-        "schedule/list/create/",
+        "schedule/",
         views.FlightScheduleView.as_view(),
         name="Flight-schedule-list-create",
     ),
     path(
-        "shedule/detail-update-delete/<int:pk>/",
+        "schedule/<int:pk>/",
         views.FlightScheduleDetailView.as_view(),
-        name="flight-schedule-detail",
+        name="flight-schedule-rud",
     ),
+    path("booking/", views.BookingView.as_view(), name="booking-list-create"),
     path(
-        "booking/list/create/", views.BookingView.as_view(), name="booking-list-create"
-    ),
-    path(
-        "booking/detail-update-delete/<int:pk>/",
+        "booking/<int:pk>/",
         views.BookingDetailView.as_view(),
-        name="Booking-detail",
+        name="Booking-rud",
+    ),
+    path(
+        "search",
+        views.SearchFlight.as_view(),
+        name="search-flight",
     ),
 ]

@@ -52,7 +52,7 @@ pip install -r requirements.txt
 Base URL for all API endpoints : `http://127.0.0.1:8000/` <br />
 
 ENDPOINT     METHOD     QUERY_PARAMS     DATA
-ENDPOINT | METHOD | QUERY_PARAS | DATA
+ ENDPOINT | METHOD | QUERY_PARAS | DATA
 -------- | ------ | ----------- | ----
 Content  | Content Cell
 Content  | Content Cell

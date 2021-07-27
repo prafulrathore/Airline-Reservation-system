@@ -6,8 +6,8 @@ urlpatterns = [
     path("create/", views.PassengerCreateView.as_view(), name="passenger-create"),
     path("list/", views.PassengerListView.as_view(), name="passenger-list"),
     path(
-        "detail-update-delete/<int:pk>",
+        "<int:pk>/",
         views.PassengerDetailView.as_view(),
-        name="passenger-detail-update-delete",
+        name="passenger-rud",
     ),
 ]

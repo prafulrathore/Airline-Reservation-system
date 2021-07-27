@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from fleet.models import Aircraft, Booking, Flight, Schedule
+from fleet.models import Aircraft, Flight, Schedule, Booking
 
 # Register your models here.
 @admin.register(Aircraft)
@@ -15,7 +15,13 @@ class FlightAdmin(admin.ModelAdmin):
 
 @admin.register(Schedule)
 class ScheduleAdmin(admin.ModelAdmin):
-    list_display = ["flight", "departure_date", "arrival_date", "departure_time", "arrival_time"]
+    list_display = [
+        "flight",
+        "departure_date",
+        "arrival_date",
+        "departure_time",
+        "arrival_time",
+    ]
 
 
 @admin.register(Booking)
